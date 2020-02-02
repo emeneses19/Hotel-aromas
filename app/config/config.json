@@ -1,0 +1,20 @@
+{
+    "development": {
+        "username": "postgres",
+        "password": "123456",
+        "database": "aromas",
+        "host": "127.0.0.1",
+        "dialect": "postgres"
+    },
+    "test": {
+        "dialect": "sqlite",
+        "storage": "./db/database.sqlite"
+    },
+    "production": {
+        "username": "zwysoeudmnqmln",
+        "password": "09847fc84eb716fc3e7a94e0ec692028feb4aa12864a0021804d900c8baa84ed",
+        "database": "dao8mlm16hmv9s",
+        "host": "ec2-54-225-113-7.compute-1.amazonaws.com",
+        "dialect": "postgres"
+    }
+}
