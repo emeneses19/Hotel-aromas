@@ -70,8 +70,7 @@ exports.remove = async function(req, res) {
 };
 
 // Buscando habitaciones disponibles 
-
-exports.list = async function(req, res) {
+exports.roomava = async function(req, res) {
     try {
         const startDate = new Date(req.params.startDate);
         const endDate = new Date(req.params.endDate);
