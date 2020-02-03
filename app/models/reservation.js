@@ -3,6 +3,7 @@ module.exports = (sequelize, DataTypes) => {
     const Reservation = sequelize.define('Reservation', {
         startDate: DataTypes.DATE,
         endDate: DataTypes.DATE,
+        reservationCode: { type: DataTypes.STRING, unique: true },
         //poder tener el horario, el doctor y la especilidad
         UsuarioId: DataTypes.INTEGER,
         ClientId: DataTypes.INTEGER,
