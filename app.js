@@ -10,17 +10,6 @@ const typeDocRouter = require('./app/routes/typedoc.routes');
 const typeRoomRouter = require('./app/routes/typeroom.routes');
 const usuarioRouter = require('./app/routes/usuario.routes');
 const clientRouter = require('./app/routes/client.routes');
-// const horaRouter = require('./app/routes/hora.routes');
-// const tareaRouter = require('./app/routes/tareas.routes');
-// const adminRouter = require('./app/routes/admin.routes');
-// const blogRouter = require('./app/routes/blog.routes');
-// const citaRouter = require('./app/routes/cita.routes');
-// const doctorRouter = require('./app/routes/doctor.routes');
-// const especialidadRouter = require('./app/routes/especialidad.routes');
-// const especialistaRouter = require('./app/routes/especialista.routes');
-// const horarioRouter = require('./app/routes/horario.routes');
-// const pacienteRouter = require('./app/routes/paciente.routes');
-// const servicioRouter = require('./app/routes/servicio.routes');
 
 const app = express();
 

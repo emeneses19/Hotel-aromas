@@ -1,10 +1,15 @@
 const db = require('../models');
 const Room = db.Room;
-const Detailreserve = db.Detailreserve;
+// const Detailreserve = db.Detailreserve;
+const Reservation = db.Reservation;
 
 exports.list = async function(req, res) {
     try {
-        const Rooms = await Room.findAll();
+        const Rooms = await Room.findAll({
+            include: [
+                { model: db.TypeRoom, as: 'typeroom', attributes: ['name', 'description'] }
+            ]
+        });
         res.json(Rooms);
     } catch (err) {
         res.status(500).json({ err });
@@ -74,19 +79,19 @@ exports.roomava = async function(req, res) {
     try {
         const startDate = new Date(req.params.startDate);
         const endDate = new Date(req.params.endDate);
-        const detailreserves = await Detailreserve.findAll({
-                where: [{
-                    [startDate.lt]: endDate,
-                    [endDate.gt]: startDate,
-                    [estado.ne]: 'anulado'
-                }]
+        const reservations = await Reservation.findAll({
+                where: {
+                    [startDate.lt]: endDate, // lt menor que
+                    [endDate.gt]: startDate, //// gt mayor que
+                    [estado.ne]: 'anulado' //ne no es igual
+                }
             })
-            .selected('reservaHabitacion')
+            .selected('detailReserve')
             .exec();
 
         let ocupadasroom = [];
-        for (const detailreserve of detailreserves) {
-            for (const reshab of detailreserve.reservaHabitacion) {
+        for (const reservation of reservations) {
+            for (const reshab of reservation.detailReserve) {
                 ocupadasroom.push(reshab.roomid);
             }
         }
@@ -94,7 +99,6 @@ exports.roomava = async function(req, res) {
         const disponiblerooms = await Room.find({ 'id': { $notIn: ocupadasroom }, state: true })
             .exec();
         res.json(disponiblerooms);
-        //   res.json(horarios);
     } catch (err) {
         res.status(500).json({ error: err });
     }

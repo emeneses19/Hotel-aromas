@@ -4,12 +4,13 @@ module.exports = (sequelize, DataTypes) => {
         names: DataTypes.STRING,
         surnames: DataTypes.STRING,
         dni: { type: DataTypes.STRING(12), unique: true },
-        role: { type: DataTypes.STRING, defaultValue: 'ROLE_EMPLOYEE' },
+        role: { type: DataTypes.STRING },
         email: { type: DataTypes.STRING, unique: true },
         state: {
             type: DataTypes.BOOLEAN,
             defaultValue: true
         },
+        phone: DataTypes.STRING,
         password: DataTypes.STRING,
         google: DataTypes.BOOLEAN,
         facebook: DataTypes.BOOLEAN

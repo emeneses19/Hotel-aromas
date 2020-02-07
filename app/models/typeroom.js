@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
         description: DataTypes.TEXT,
     }, { schema: 'public' });
     TypeRoom.associate = function(models) {
-        TypeRoom.hasMany(models.Roms, {
-            foreignKey: 'TypeRoomId',
+        TypeRoom.hasMany(models.Room, {
+            foreignKey: 'typeRoomId',
         });
     };
     return TypeRoom;

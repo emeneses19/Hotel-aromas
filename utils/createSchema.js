@@ -8,7 +8,7 @@ async function createSchema() {
         // Definicion de modelos en orden de cracion
         await db.Usuario.sync({ force: true });
         await db.Client.sync({ force: true });
-        await db.Room.sync({ force: true });
+        await db.Rom.sync({ force: true });
         await db.TypeRoom.sync({ force: true });
         await db.TypeDoc.sync({ force: true });
         // await db.Tarea.sync({force: true});

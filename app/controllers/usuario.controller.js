@@ -15,7 +15,7 @@ exports.get = async function(req, res) {
         const id = req.params.id;
         const usuario = await Usuario.findOne({
             where: { id: id },
-            attributes: ['names', 'surnames', 'dni', 'role', 'email', 'state', ],
+            attributes: ['names', 'surnames', 'dni', 'role', 'email', 'state', 'phone', 'password'],
         });
         res.json(usuario);
     } catch (err) {

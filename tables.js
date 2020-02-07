@@ -20,7 +20,7 @@ async function createSchema() {
         // await db.sequelize.models.Cita.sync({force: true});
         await db.sequelize.models.TypeRoom.sync({ force: true });
         await db.sequelize.models.TypeDoc.sync({ force: true });
-        await db.sequelize.models.Roms.sync({ force: true });
+        await db.sequelize.models.Room.sync({ force: true });
         await db.sequelize.models.Usuario.sync({ force: true });
         await db.sequelize.models.Client.sync({ force: true });
         await db.sequelize.models.Reservation.sync({ force: true });
